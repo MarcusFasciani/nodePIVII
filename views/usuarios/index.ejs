@@ -1,0 +1,67 @@
+<h1>Cadastrar</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.datatables.net/plug-ins/1.10.7/integration/jqueryui/dataTables.jqueryui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/1.10.7/integration/jqueryui/dataTables.jqueryui.css"></link>
+<script src="http://cdn.datatables.net/1.10-dev/js/jquery.dataTables.js"></script>
+
+<% if(typeof(messages) != 'undefined') { %>
+  <div  id="mensagem"><%= messages.info %></div>
+<% } %>
+
+<div id="formulario">
+  <form action="/usuarios/edit" method="post">
+    <input type="hidden" name="id" id="id" value="<%= value._id%>"/>
+    <label>Nome</label>
+    <input type="text" name="nome" id="nome" value="<%= value.nome%>"/>
+    <label>Login</label>
+    <input type="text" name="login" id="login" value="<%= value.login%>" />
+    <label>Senha</label>
+    <input type="text" name="senha" id="senha" value="<%= value.senha%>" />
+    <input type="submit" id="buscar" value="Salvar" />
+  </form>
+</div>
+
+<p>Lista</p>
+<table id="tabela">
+<tr>
+	<th>Código</th>
+  <th>Nome</th>
+  <th>Login</th>
+  <th>Senha</th>
+  <th>Data de Cadastro</th>
+  <th>Editar</th>
+  <th>Remover</th>
+</tr>
+<% for(var i=0; i < lista.length; i++) { %>
+   <tr>
+     <td><%= lista[i]._id %></td>
+     <td><%= lista[i].nome %></td>
+     <td><%= lista[i].login %></td>
+     <td><%= lista[i].senha %></td>
+     <td><%= lista[i].data_cad %></td>
+     <td><a class="edit" onclick="return false;" href="/usuarios/edit/<%= lista[i]._id%>">/</td>
+     <td><a class="remover" href="/usuarios/delete/<%= lista[i]._id%>">X</td>
+   </tr>
+<% } %>
+</table>
+
+<script>
+
+  $(document).ready(function() {
+    $('#tabela').dataTable();
+  });
+
+  $('.edit').on("click", function()
+  {
+    $.ajax({
+      url: $(this).attr('href'),
+      success: function(data)
+      {
+        $('#formulario').html(data);
+      }
+    });
+  });
+
+
+</script>
+

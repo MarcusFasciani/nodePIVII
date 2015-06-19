@@ -1,0 +1,33 @@
+language: node_js
+node_js:
+  - '0.10'
+  - '0.11'
+script: make test-coveralls
+deploy:
+  provider: heroku
+  api_key:
+    secure: 58270633-6eab-4d29-815f-54b276203121
+  app: it-dusk-5388
+  on:
+    repo: marcus/nodePIVII
+before_install:
+  - npm install express
+  - npm install express-load
+  - npm install body-parser
+  - npm install mongoq
+  - npm install lcov-parse
+  - npm install log-driver
+  - npm install request
+  - npm install js-yaml
+  - npm install ejs
+  - npm install mongodb
+  - npm install mongoose
+  - npm install express-session
+  - npm install express-flash
+  - npm install moment
+  - npm install multer
+  - npm install errorhandler
+  - npm install cookie-parser
+  - npm install sinon
+after_install:
+  - node server.js
