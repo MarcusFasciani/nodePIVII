@@ -19,6 +19,20 @@ var session 			 = require('express-session');
 //var db = mongoq(DB);
 //var collection = db.collection(COLLECTION);
 
+{
+    "_id": "nodepivii.Marcus",
+    "user": "Marcus",
+    "db": "nodepivii",
+    "credentials": {
+        "MONGODB-CR": "xxxx"
+    },
+    "roles": [
+        {
+            "role": "dbOwner",
+            "db": "nodepivii"
+        }
+    ]
+}
 
 
 
