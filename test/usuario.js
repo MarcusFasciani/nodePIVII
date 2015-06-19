@@ -13,12 +13,12 @@ describe('Calculadora', function() {
 				mudaraqui.should.equal("Adicionado com sucesso.");
 			});
 
-			it("testando", function(){
-				var callback = sinon.spy();
-			    var proxy = controller.inserirUsuario(callback);
-			    proxy();
-			    assert(callback.called);
-			});
+			//it("testando", function(){
+			//	var callback = sinon.spy();
+			//    var proxy = controller.inserirUsuario(callback);
+			//    proxy();
+			//    assert(callback.called);
+			//});
 		});
 	});
 
