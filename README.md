@@ -1,4 +1,4 @@
-<!-- #node-coveralls
+#node-coveralls
 
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Codeship Build Status][codeship-image]][codeship-url]
 
@@ -132,4 +132,3 @@ I also don't care for "soft-versioning" or "optimistic versioning" (dependencies
 
 
 
- -->
