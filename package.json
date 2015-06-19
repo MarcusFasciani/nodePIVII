@@ -11,7 +11,9 @@
     "url": "https://github.com/cainus/node-coveralls/issues"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "test-on-travis": "./node_modules/.bin/istanbul cover --report lcovonly ./node_modules/.bin/_mocha && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "bin": {
     "coveralls": "./bin/coveralls.js"
