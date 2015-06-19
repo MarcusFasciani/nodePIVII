@@ -2,7 +2,7 @@ var moment = require('moment');
 
 module.exports = function(app){
 
-	var Usuario = app.models.usuarios;
+	var Usuario = {};//app.models.usuarios;
 
 	var UsuarioController = {
 		
