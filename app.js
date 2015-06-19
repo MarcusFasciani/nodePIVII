@@ -22,8 +22,7 @@ var session 			 = require('express-session');
 
 
 
-//mongoose.connect('mongodb://MarcusFasciani:123456a@ds047632.mongolab.com:47632/nodepivii', function(err){
-mongoose.connect('mongodb://localhost:27017/marcusnode', function(err){
+mongoose.connect('mongodb://MarcusFasciani:123456a@ds047632.mongolab.com:47632/nodepivii', function(err){
   if (err){
     console.log('Erro ao conectar: '+err);
   }
