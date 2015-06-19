@@ -10,6 +10,7 @@ deploy:
   app: lit-dusk-5388
   on:
     repo: MarcusFasciani/nodePIVII
+before_script: chmod 0777 ./bin/coveralls.js
 before_install:
   - npm install express
   - npm install express-load
